@@ -1,0 +1,16 @@
+.dark {
+    background-color: #121212;
+}
+
+.light {
+    background-color: #1976d2;
+    color: #fff
+}
+
+.list {
+    :global{
+            .css-cveggr-MuiListItemIcon-root {
+                color: inherit;
+            }
+    }
+}

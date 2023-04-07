@@ -14,3 +14,17 @@ If you're interested in being a contributor and want to get involved in developi
 
 ## License
 KubeEdge is under Apache 2.0 license. See the [LICENSE](LICENSE) file for details.
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
