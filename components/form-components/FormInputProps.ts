@@ -8,5 +8,9 @@ export interface FormInputProps {
     RegisterOptions<FieldValues, string>,
     'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs'
   >;
+  options?: any[];
   setValue?: any;
+  margin?: 'none' | 'normal';
+  size?: 'small' | 'medium';
+  sx?: React.CSSProperties;
 }

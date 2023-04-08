@@ -1,9 +1,5 @@
 import React from 'react';
 import DateFnsUtils from '@date-io/date-fns';
-import {
-  KeyboardDatePicker,
-  MuiPickersUtilsProvider
-} from '@material-ui/pickers';
 import { Controller, useFormContext } from 'react-hook-form';
 import { FormInputProps } from './FormInputProps';
 const DATE_FORMAT = 'dd-MMM-yy';

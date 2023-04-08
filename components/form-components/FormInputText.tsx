@@ -7,7 +7,8 @@ export const FormInputText = ({
   name,
   control,
   label,
-  rules
+  rules,
+  ...restProps
 }: FormInputProps) => {
   return (
     <Controller
@@ -24,6 +25,7 @@ export const FormInputText = ({
           fullWidth
           label={label}
           variant="outlined"
+          {...restProps}
         />
       )}
     />

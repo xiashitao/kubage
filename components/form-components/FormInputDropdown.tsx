@@ -1,26 +1,28 @@
-import React from "react";
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
-import { useFormContext, Controller } from "react-hook-form";
-import { FormInputProps } from "./FormInputProps";
+import React from 'react';
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
+import { useFormContext, Controller } from 'react-hook-form';
+import { FormInputProps } from './FormInputProps';
 
-const options = [
+const defaultOptions = [
   {
-    label: "Dropdown Option 1",
-    value: "1",
+    label: 'Dropdown Option 1',
+    value: '1'
   },
   {
-    label: "Dropdown Option 2",
-    value: "2",
-  },
+    label: 'Dropdown Option 2',
+    value: '2'
+  }
 ];
 
 export const FormInputDropdown: React.FC<FormInputProps> = ({
   name,
   control,
   label,
+  options,
+  ...restProps
 }) => {
   const generateSingleOptions = () => {
-    return options.map((option: any) => {
+    return (options || defaultOptions).map((option: any) => {
       return (
         <MenuItem key={option.value} value={option.value}>
           {option.label}
@@ -30,11 +32,11 @@ export const FormInputDropdown: React.FC<FormInputProps> = ({
   };
 
   return (
-    <FormControl size={"small"}>
+    <FormControl size={'small'} fullWidth>
       <InputLabel>{label}</InputLabel>
       <Controller
         render={({ field: { onChange, value } }) => (
-          <Select onChange={onChange} value={value}>
+          <Select fullWidth onChange={onChange} value={value} {...restProps}>
             {generateSingleOptions()}
           </Select>
         )}

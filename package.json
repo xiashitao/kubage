@@ -3,13 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "APISERVER=http://127.0.0.1:7000 next dev",
+    "dev": "APISERVER=http://192.168.3.18:7000 next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@date-io/date-fns": "^2.16.0",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@material-ui/pickers": "^3.3.10",
@@ -17,11 +16,12 @@
     "@mui/material": "^5.11.15",
     "@mui/styles": "^5.11.16",
     "@mui/utils": "^5.11.13",
+    "@mui/x-date-pickers": "^6.0.4",
     "@types/node": "18.15.11",
     "@types/react": "18.0.31",
     "@types/react-dom": "18.0.11",
     "classnames": "^2.3.2",
-    "date-fns": "link:@types/@date-io/date-fns",
+    "dayjs": "^1.11.7",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
     "next": "13.2.4",
