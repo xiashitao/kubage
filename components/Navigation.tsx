@@ -53,7 +53,7 @@ const NavItem = ({
 
   if (!children) {
     return (
-      <ListItemButton onClick={handleSelect}>
+      <ListItemButton selected={selectedName === name} onClick={handleSelect}>
         <ListItemIcon>
           <Icon />
         </ListItemIcon>
@@ -74,7 +74,14 @@ const NavItem = ({
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           {children.map(child => (
-            <NavItem name={child.name} Icon={child.Icon} key={child.name} />
+            <NavItem
+              name={child.name}
+              Icon={child.Icon}
+              key={child.name}
+              path={child.path}
+              selectedName={selectedName}
+              select={select}
+            />
           ))}
         </List>
       </Collapse>
@@ -87,6 +94,14 @@ const Navigation = (props: NavProps) => {
   const theme = useTheme();
   const { showNavigation } = React.useContext(GlobalContext);
   const [selectedName, setSelectedName] = React.useState(defaultSelectedName);
+  const router = useRouter();
+
+  const select = (name: string, path?: string) => {
+    setSelectedName(name);
+    if (path) {
+      router.push(path);
+    }
+  };
 
   return (
     <Collapse in={showNavigation} timeout="auto" unmountOnExit>
@@ -99,7 +114,7 @@ const Navigation = (props: NavProps) => {
             path={item.path}
             children={item.children}
             selectedName={selectedName}
-            setSelectedName={setSelectedName}
+            select={select}
           />
         ))}
       </List>

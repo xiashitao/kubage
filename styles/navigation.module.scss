@@ -1,13 +1,21 @@
 .dark {
-    background-color: #121212;
+    background-color: rgb(39,39,39);
+    color: #fff;
 }
 
 .light {
     background-color: #1976d2;
-    color: #fff
+    color: #fff;
+    :global{
+        .MuiButtonBase-root.MuiListItemButton-root.MuiListItemButton-gutters.Mui-selected.MuiListItemButton-root.MuiListItemButton-gutters.Mui-selected.Mui-selected {
+            background-color: rgba(144, 202, 249, 0.16);
+        }
+    }
 }
 
 .list {
+    height: calc(100vh - 80px);
+    width: 300px;    
     :global{
             .css-cveggr-MuiListItemIcon-root {
                 color: inherit;

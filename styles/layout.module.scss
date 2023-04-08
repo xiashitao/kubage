@@ -1,3 +1,10 @@
-.main {
+.appContent {
+    display: flex;
     height: calc(100vh - 64px);
+    .main {
+        flex: 1;
+        padding: 16px;
+        height: calc(100% - 32px);
+        overflow: auto;
+    }
 }

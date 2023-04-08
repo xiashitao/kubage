@@ -22,6 +22,9 @@ export default function TopAppBar() {
     React.useContext(GlobalContext);
 
   const handleClick = () => {
+    const pastDate = new Date(0);
+    globalThis.document.cookie = 'token=; expires=' + pastDate.toUTCString();
+    console.log(document.cookie);
     toggleIsLogin();
     router.push('/login');
   };
